@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 id="heading">Contact</h1>
+        </header>
+        <main>
+            <form action="/" method="post" id="myForm">
+                <label for="email">Email Address</label>
+                <input id="email" name="email" type="email" placeholder="youremail@email.com">
+                <br />
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" placeholder="password" minlength="7">
+                <br />
+                <label for="age">Age</label>
+                <input min="18" max="100" type="number" name="age" id="age" placeholder="18++" />
+
+                <br />
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date">
+                <br />
+                <label for="description">Description</label>
+                <textarea name="description" id="description" cols="30" rows="5"></textarea>
+                <br />
+                <label for="file">file</label>
+                <input type="file" name="" id="" multiple />
+                <br />
+                <label for="cars">Cars</label>
+                <select name="cars" id="cars" multiple>
+                    <option value="selectone">Select One</option>
+                    <option value="audi">Audi</option>
+                    <option value="gmc">GMC</option>
+                    <option value="telsa" selected>Telsa</option>
+                    <option value="ford">Ford</option>
+                </select>
+
+                <label for="radio">Select One
+            </form>label>
+
+            <input type="radio" name="select" id="" value="myRadio" />
+            <input type="radio" name="select" id="" value="myRadio2" />
+            <input type="radio" name="select" id="" value="myRadio3" />
+            <button type="submit">Submit</button>
+
+
+            <button type="button" onclick="getDate()">
+                Click and see Date and Time.</button>
+            <p id="date_time_button"></p>
+
+            <!-- <button type="button" onclick="getLocation()">
+                Click and see Location.</button>
+            <p id="date_time_button"></p>
+
+            <button map = new google.maps.Map(document.getElementById('map-canvas'),
+      mapOptions></button> -->
+
+
+
+            </form>
+        </main>
+        <button onclick="getDate()">Click and See Time and Date</button>
+        <button onclick="currentLocation()">Click to See Current Location</button>
+
+        <p id="location"></p>
+    </div>
+    <script>
+        function changeheading() {
+            //document.getElementsByName('h1')
+            const heading = document.getElementById('heading')
+            console.log(heading)
+
+            heading.innerText = "I'm New"
+            heading.style.color = 'red'
+            heading.style.textAlign = 'left'
+        }
+
+        function getDate() {
+            document.getElementById('date_time_button').innerHTML = Date()
+        }
+        
+
+        function currentLocation() {
+            navigator.geolocation.GeolocationCoordinates((position) => {
+                alert(`latitude ${position.coords.latitude} longitude ${position.coords.longitude}`)
+
+            }), 
+            console.error
+             
+        } 
+
+        
+        
+
+    </script>
+</body>
+
+</html>
